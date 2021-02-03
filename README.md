@@ -1,5 +1,5 @@
 # MyLibCurrencyConverterExample
-From library https://github.com/gzeinnumer/MyLibCurrencyConverterExample
+From library https://github.com/gzeinnumer/MyLibCurrencyConverter
 
 [Download Sample App](https://drive.google.com/file/d/1CIRQluQCuLgkHoTmsYuFRWv3O-_o7aSS/view?usp=sharing)
 
