@@ -16,7 +16,7 @@
         android:hint="Dalam Jumlah Rupiah"
         android:inputType="numberDecimal" />
 
-    <com.gzeinnumer.mylibcurrencyconverter.utils.CurrencyEditText
+    <com.gzeinnumer.etc.utils.CurrencyEditText
         android:id="@+id/ed_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:layout_marginTop="16dp"
         android:hint="Dalam Bentuk Rupiah">
 
-        <com.gzeinnumer.mylibcurrencyconverter.utils.CurrencyEditText
+        <com.gzeinnumer.etc.utils.CurrencyEditText
             android:id="@+id/ed_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

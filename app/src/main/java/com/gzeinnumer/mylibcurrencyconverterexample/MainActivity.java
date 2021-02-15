@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.gzeinnumer.mylibcurrencyconverter.utils.CurrencyConverter;
-import com.gzeinnumer.mylibcurrencyconverter.utils.StringTools;
+import com.gzeinnumer.etc.utils.CurrencyConverter;
+import com.gzeinnumer.etc.utils.StringTools;
 import com.gzeinnumer.mylibcurrencyconverterexample.databinding.ActivityMainBinding;
 import com.gzeinnumer.mylibsimpletextwatcher.SimpleTextWatcher;
 import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.AfterTextChanged;
