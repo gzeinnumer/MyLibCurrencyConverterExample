@@ -1,17 +1,18 @@
 package com.gzeinnumer.mylibcurrencyconverterexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.text.Editable;
+import android.util.Log;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.gzeinnumer.etc.utils.CurrencyConverter;
 import com.gzeinnumer.etc.utils.StringTools;
 import com.gzeinnumer.mylibcurrencyconverterexample.databinding.ActivityMainBinding;
-import com.gzeinnumer.mylibsimpletextwatcher.SimpleTextWatcher;
-import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.AfterTextChanged;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG = "MainActivity";
+
     private ActivityMainBinding binding;
 
     @Override
@@ -20,32 +21,29 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        initEditText();
+//        sample1();
+        sample3();
     }
 
-    private void initEditText() {
-        binding.ed1.addTextChangedListener(new CurrencyConverter(binding.ed1, "RP ", new CurrencyConverter.StringCallBack() {
+    private void sample1() {
+        binding.editText.addTextChangedListener(new CurrencyConverter(binding.editText));
+
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str = binding.editText.getText().toString();
+                Log.d(TAG, "onClick: " + StringTools.trimCommaOfString(str));
+
+                binding.textView.setText(StringTools.trimCommaOfString(str));
+            }
+        });
+    }
+
+    private void sample3() {
+        binding.editText.addTextChangedListener(new CurrencyConverter(binding.editText, new CurrencyConverter.StringCallBack() {
             @Override
             public void realString(String value) {
-                binding.tvReal.setText("(Real Value) : " + value);
-            }
-        }));
-
-        binding.ed2.addTextChangedListener(new SimpleTextWatcher(new AfterTextChanged() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                String str = StringTools.trimCommaOfString(s.toString(), "RP ");
-
-                binding.tvReal.setText("(Real Value) : " + str);
-            }
-        }));
-
-        binding.ed3.addTextChangedListener(new SimpleTextWatcher(new AfterTextChanged() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                String str = StringTools.trimCommaOfString(s.toString(), "RP ");
-
-                binding.tvReal.setText("(Real Value) : " + str);
+                binding.textView.setText("(Real Value) : " + value + " && (Preview) : " + binding.editText.getText().toString());
             }
         }));
     }
